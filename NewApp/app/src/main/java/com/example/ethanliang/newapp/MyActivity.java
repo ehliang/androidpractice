@@ -10,7 +10,8 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.EditText;
-
+import android.widget.LinearLayout;
+import android.widget.RadioGroup;
 
 
 public class MyActivity extends AppCompatActivity {
@@ -18,7 +19,7 @@ public class MyActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_my);
+        setContentView(R.layout.radioactivity);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -30,6 +31,21 @@ public class MyActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+        final RadioGroup group1 = (RadioGroup) findViewById(R.id.orientation);
+        group1.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                switch (checkedId) {
+                    case R.id.horizontal:
+                        group.setOrientation(LinearLayout.HORIZONTAL);
+                        break;
+                    case R.id.vertical:
+                        group.setOrientation(LinearLayout.VERTICAL);
+                        break;
+                }
+            }
+        });
+
     }
 
     @Override
@@ -61,4 +77,6 @@ public class MyActivity extends AppCompatActivity {
         intent.putExtra(EXTRA_MESSAGE, message);
         startActivity(intent);
     }
+
+
 }
