@@ -11,46 +11,68 @@
     tools:context=".MainActivity" >
 
 
-        <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/main_input"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentEnd="true" />
 
+        <!--<EditText-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:id="@+id/main_input"-->
+            <!--android:layout_alignParentTop="true"-->
+            <!--android:layout_alignParentStart="true"-->
+            <!--android:layout_alignParentEnd="true" />-->
+
+        <!--<Button-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="Start"-->
+            <!--android:id="@+id/button"-->
+            <!--android:layout_below="@id/main_input"-->
+            <!--android:layout_alignParentStart="true"-->
+            <!--android:onClick="onClick"/>-->
+
+
+        <!--<RadioGroup-->
+            <!--android:id="@+id/orientation"-->
+            <!--android:layout_below="@id/button"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginTop="16dp">-->
+
+            <!--<RadioButton-->
+                <!--android:id="@+id/horizontal"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="Horizontal" >-->
+            <!--</RadioButton>-->
+
+            <!--<RadioButton-->
+                <!--android:id="@+id/vertical"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:checked="true"-->
+                <!--android:text="Vertical" >-->
+            <!--</RadioButton>-->
+        <!--</RadioGroup>-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true">
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Start"
-            android:id="@+id/button"
-            android:layout_below="@id/main_input"
-            android:layout_alignParentStart="true"
-            android:onClick="onClick"/>
-
-
-        <RadioGroup
-            android:id="@+id/orientation"
-            android:layout_below="@id/button"
+            android:id="@+id/picturebutton"
+            android:text="@string/picture_on"/>
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp">
-
-            <RadioButton
-                android:id="@+id/horizontal"
-                android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/picturebutton">
+            <ImageView
+                android:id="@+id/prettypicture"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Horizontal" >
-            </RadioButton>
+                android:src="@drawable/wdwd"/>
+        </RelativeLayout>
 
-            <RadioButton
-                android:id="@+id/vertical"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:checked="true"
-                android:text="Vertical" >
-            </RadioButton>
-        </RadioGroup>
+    </RelativeLayout>
 
 
 </RelativeLayout>
